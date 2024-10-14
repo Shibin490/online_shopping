@@ -447,25 +447,25 @@ void checkout(ShoppingCart cart) {
 
 // class Product {
 //   // Private fields for encapsulation
-//   String _name;
-//   double _price;
-//   int _quantity;
-//   int _id;
+//   String name;
+//   double price;
+//   int quantity;
+//   int id;
 
-//   Product(this._name, this._price, this._quantity, this._id);
+//   Product(this.name, this.price, this.quantity, this.id);
 
-//   String get name => _name;
-//   double get price => _price;
-//   int get id => _id;
-//   int get quantity => _quantity;
+//   String get name => name;
+//   double get price => price;
+//   int get id => id;
+//   int get quantity => quantity;
 
 //   double getFinalPrice() {
-//     return _price * _quantity;
+//     return price * quantity;
 //   }
 
 //   void printDetails() {
 //     print(
-//         'Product ID: $_id, Product: $_name, Price: \$${_price.toStringAsFixed(2)}, Quantity: $_quantity');
+//         'Product ID: $id, Product: $name, Price: \$${price.toStringAsFixed(2)}, Quantity: $quantity');
 //   }
 // }
 
@@ -512,19 +512,19 @@ void checkout(ShoppingCart cart) {
 // }
 
 // class DiscountedProduct extends Product {
-//   double _discount;
+//   double discount;
 
-//   DiscountedProduct(String name, double price, int quantity, this._discount)
+//   DiscountedProduct(String name, double price, int quantity, this.discount)
 //       : super(name, price, quantity, DateTime.now().millisecondsSinceEpoch);
 
 //   @override
 //   double getFinalPrice() {
-//     return (price * (1 - _discount / 100)) * quantity;
+//     return (price * (1 - discount / 100)) * quantity;
 //   }
 
 //   @override
 //   void printDetails() {
 //     print(
-//         'Product ID: $id, Product: $name, Price: \$${price.toStringAsFixed(2)}, Quantity: $quantity, Discount: $_discount%');
+//         'Product ID: $id, Product: $name, Price: \$${price.toStringAsFixed(2)}, Quantity: $quantity, Discount: $discount%');
 //   }
 // }

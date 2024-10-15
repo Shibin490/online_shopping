@@ -13,7 +13,12 @@ class DiscountedProduct extends Product {
 
   @override
   void printDetails() {
-    print(
-        'Product ID: $id, Product: $name, Price: \$${price.toStringAsFixed(2)}, Quantity: $quantity, Discount: $discount%');
+    print("________discounted product_________");
+    print(" discounted Product: $name");
+    print(" discounted Product: $price");
+    print(" discounted Product: $quantity");
+    print(" discounted Product ID: $id");
+    print(" Product discount: $discount%");
+    print("___________________________________");
   }
 }

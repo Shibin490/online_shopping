@@ -16,7 +16,11 @@ class Product {
   }
 
   void printDetails() {
-    print(
-        'Product ID: $id, Product: $name, Price: \$${price.toStringAsFixed(2)}, Quantity: $quantity');
+    print("================================");
+    print("Product Name: $name");
+    print("Product Price: $price,");
+    print("Product Quantity: $quantity");
+    print("Product ID: $id");
+    print("================================");
   }
 }

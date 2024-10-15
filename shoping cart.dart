@@ -1,18 +1,18 @@
 import 'product.dart';
 
 class ShoppingCart {
-  List<Product> _items = [];
+  List<Product> items = [];
 
-  List<Product> get items => _items;
+  List<Product> get item => items;
 
   void addItem(Product product) {
-    _items.add(product);
+    items.add(product);
     print('${product.name} added to the cart.');
   }
 
   void removeItem(Product product) {
-    if (_items.contains(product)) {
-      _items.remove(product);
+    if (items.contains(product)) {
+      items.remove(product);
       print('${product.name} removed from the cart.');
     } else {
       print('${product.name} is not in the cart.');
@@ -20,22 +20,22 @@ class ShoppingCart {
   }
 
   double getTotalPrice() {
-    if (_items.isEmpty) {
+    if (items.isEmpty) {
       throw Exception("Your cart is empty.");
     }
 
     double total = 0.0;
-    for (var item in _items) {
+    for (var item in items) {
       total += item.getFinalPrice();
     }
     return total;
   }
 
   void listItems() {
-    if (_items.isEmpty) {
+    if (items.isEmpty) {
       print("Your cart is empty.");
     } else {
-      for (var product in _items) {
+      for (var product in items) {
         product.printDetails();
       }
     }

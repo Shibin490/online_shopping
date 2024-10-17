@@ -14,11 +14,11 @@ class DiscountedProduct extends Product {
   @override
   void printDetails() {
     print("________discounted product_________");
-    print(" discounted Product: $name");
-    print(" discounted Product: $price");
-    print(" discounted Product: $quantity");
-    print(" discounted Product ID: $id");
-    print(" Product discount: $discount%");
+    print(" Product Name: $name");
+    print(" Product Price: $price");
+    print(" Product Quantity: $quantity");
+    print(" Product ID: $id");
+    print(" Product discount : $discount%");
     print("___________________________________");
   }
 }

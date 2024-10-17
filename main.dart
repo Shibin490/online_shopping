@@ -36,7 +36,7 @@ void main() async {
         break;
       case '6':
         isRunning = false;
-        print("Exiting...");
+        print("Exiting...\nthankyou..");
         break;
       default:
         print("Invalid choice. Please try again.");
@@ -96,8 +96,6 @@ Future<void> addProduct(ShoppingCart cart) async {
       print("Invalid input. Please try again.");
     }
   }
-
-  // Product quantity section
   while (true) {
     try {
       stdout.write("Enter product quantity: ");
@@ -115,7 +113,6 @@ Future<void> addProduct(ShoppingCart cart) async {
     }
   }
 
-  // Unique ID section
   while (true) {
     stdout.write("Enter a number for ID : ");
     String idInput = stdin.readLineSync()!;
@@ -167,7 +164,8 @@ Future<void> addDiscountedProduct(ShoppingCart cart) async {
       print("Name added successfully.");
       break;
     } catch (e) {
-      print("Please try again.");
+      print(
+          "Name should be start with alphabet and cannot be empty.\nplease try again.");
     }
   }
   double price;
@@ -191,14 +189,15 @@ Future<void> addDiscountedProduct(ShoppingCart cart) async {
       print("Price added successfully.");
       break;
     } catch (e) {
-      print("invalid input.Please try again.");
+      print(
+          "Product price cannot be empty and must be a positive number.\nPlease try again.");
     }
   }
 
   int quantity;
   while (true) {
     try {
-      stdout.write("Enter product quantity: ");
+      stdout.write("Enter product quantity:");
       String? inputQuantity = stdin.readLineSync();
 
       if (inputQuantity == null) {
@@ -214,7 +213,8 @@ Future<void> addDiscountedProduct(ShoppingCart cart) async {
       print("Quantity added successfully.");
       break;
     } catch (e) {
-      print("invalid input.Please try again.");
+      print(
+          "quantity must be a number and cannot be empty.\nPlease try again.");
     }
   }
   double discount;
@@ -256,6 +256,7 @@ Future<void> addDiscountedProduct(ShoppingCart cart) async {
       bool idExists = cart.items.any((product) => product.id == parsedID);
       if (idExists) {
         print("ID (Nnumber) already exists. Please enter a unique ID.");
+        continue;
       }
 
       print("ID added successfully.");
@@ -270,7 +271,7 @@ Future<void> addDiscountedProduct(ShoppingCart cart) async {
     DiscountedProduct discountedProduct =
         DiscountedProduct(name, price, quantity, discount);
     cart.addItem(discountedProduct);
-    print("${name} added successfully");
+    // print("${name} added successfully");
   } else {
     print("Invalid input. Please try again.");
   }
@@ -313,7 +314,7 @@ void removeProduct(ShoppingCart cart) {
         throw Exception("Product ID must be a positive number.");
       }
 
-      id = parsedId; // Assign the manually entered ID
+      id = parsedId;
       break;
     } catch (e) {
       print(
